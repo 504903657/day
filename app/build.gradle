@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 29
@@ -21,7 +22,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    greendao {
+        schemaVersion 9
+        daoPackage 'com.app.day'
+        targetGenDir 'src/main/java'
+    }
 }
 
 dependencies {
@@ -42,5 +51,6 @@ dependencies {
     implementation 'com.github.dfqin:grantor:2.5'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.google.code.gson:gson:2.8.5'
-
+    implementation 'org.greenrobot:greendao:3.2.2'
+//    implementation 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v2.0.1'
 }

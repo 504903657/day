@@ -34,7 +34,6 @@
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_select"
-                android:textColor="#fff"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -58,16 +57,15 @@
                 android:layout_height="40dp"
                 android:background="@drawable/bg_select"
                 android:inputType="textPassword"
-                android:textColor="#fff"
                 android:textSize="20sp" />
         </LinearLayout>
 
         <Button
+            android:text="login"
             android:id="@+id/btn_login"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="login"
             android:textSize="20sp" />
     </LinearLayout>
 
