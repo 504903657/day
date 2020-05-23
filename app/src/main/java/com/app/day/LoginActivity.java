@@ -1,6 +1,7 @@
 package com.app.day;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,9 +32,17 @@ public class LoginActivity extends Activity {
             return;
         }
 
-        if (etUsername.getText().toString().equals("admin") && etPassword.getText().toString().equals("111111")) {
-            T.showShort(this, "success");
-        }else {
+        if (etUsername.getText().toString().equals("admin")) {
+            dbUser.deleteAllNote();
+            User user = new User();
+            user.setUsername("admin");
+            user.setPassword(etPassword.getText().toString());
+            dbUser.saveNote(user);
+            Intent intent = new Intent();
+            intent.setClass(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+
+        } else {
             T.showShort(this, "fail");
         }
     }

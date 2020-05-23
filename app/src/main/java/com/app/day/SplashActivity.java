@@ -16,7 +16,6 @@ import com.github.dfqin.grantor.PermissionListener;
 import com.github.dfqin.grantor.PermissionsUtil;
 
 
-
 public class SplashActivity extends Activity {
 
     @Override
@@ -30,7 +29,7 @@ public class SplashActivity extends Activity {
     private void applyPermission() {
         PermissionsUtil.requestPermission(SplashActivity.this, new PermissionListener() {
                     @Override
-                    public void permissionGranted( String[] permission) {
+                    public void permissionGranted(String[] permission) {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -43,7 +42,7 @@ public class SplashActivity extends Activity {
                     }
 
                     @Override
-                    public void permissionDenied( String[] permission) {
+                    public void permissionDenied(String[] permission) {
                         applyPermission();
                     }
                 },
@@ -51,7 +50,10 @@ public class SplashActivity extends Activity {
                 Manifest.permission.ACCESS_NETWORK_STATE,
                 Manifest.permission.INTERNET,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.READ_CONTACTS
         );
     }
 
