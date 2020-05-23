@@ -1,0 +1,9 @@
+1. Build the main framework of the program
+2. Write the login interface and related businesses
+3. Write GPS to get the location
+4. Write a web interface
+5. Write the service business
+6. Write a facebook interface
+7. Write a twitter interface
+8. Write and read the database interface
+9. Write an interface to get users from contacts
